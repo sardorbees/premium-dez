@@ -26,7 +26,7 @@ function ContactForm() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            await axios.post('http://127.0.0.1:8000/api/applicationapplications/', formData);
+            await axios.post('https://backend-dedd.onrender.com/api/applicationapplications/', formData);
             setSuccess(true);
             setFormData({ full_name: '', phone: '', address: '', description: '' });
         } catch (error) {
@@ -116,10 +116,10 @@ function ContactForm() {
                                         <div class="form-group col-md-6 mb-4">
                                             <textarea
                                                 name="description"
-                                                placeholder="Дополнительная информация"
+                                                placeholder="Вашы вопросы"
                                                 value={formData.description}
                                                 onChange={handleChange}
-                                                style={{ fontSize: '16px', outline: 'none', width: '100%' }}
+                                                style={{ fontSize: '16px', outline: 'none', width: '100%', height: '35px' }}
                                                 class="            w-full px-4 py-2 rounded border
             bg-white text-black border-gray-300
             placeholder-gray-500

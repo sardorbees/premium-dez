@@ -12,7 +12,7 @@ function VideoGallery() {
     const [videos, setVideos] = useState([]);
 
     const fetchVideos = () => {
-        axios.get('http://127.0.0.1:8000/api/video_gallery/videos/')
+        axios.get('https://backend-dedd.onrender.com/api/video_gallery/videos/')
             .then(res => setVideos(res.data))
             .catch(err => console.error(err));
     };

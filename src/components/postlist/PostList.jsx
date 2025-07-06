@@ -6,7 +6,7 @@ const PostList = () => {
     const [posts, setPosts] = useState([]);
 
     const fetchPosts = () => {
-        axios.get('http://127.0.0.1:8000/api/blog/posts/')
+        axios.get('https://backend-dedd.onrender.com/api/blog/posts/')
             .then(res => setPosts(res.data))
             .catch(err => console.error(err));
     };
@@ -44,23 +44,19 @@ const PostList = () => {
                                             <a href={`/posts/${post.slug}`} key={post.id} class="readmore-btn">читать далее</a>
                                         </div>
                                         <br />
-                                        <p className="text-sm text-gray-500" style={{ color: 'black' }}>Дата создание блога: {new Date(post.created_at).toLocaleDateString()}</p>
+                                        <p className="w-full px-4 py-2 rounded border
+            bg-white text-black border-gray-300
+            placeholder-gray-500
+
+            dark:bg-gray-700 dark:text-white dark:border-gray-600
+            dark:placeholder-gray-400
+
+            transition-colors duration-200">Дата создание блога: {new Date(post.created_at).toLocaleDateString()}</p>
                                     </div>
                                 </Link>
                             ))}
                         </div>
                     </div>
-                    {/* <div class="col-lg-12">
-                        <div class="page-pagination wow fadeInUp" data-wow-delay="1.2s">
-                            <ul class="pagination">
-                                <li><a href="#"><i class="fa-solid fa-arrow-left-long"></i></a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#"><i class="fa-solid fa-arrow-right-long"></i></a></li>
-                            </ul>
-                        </div>
-                    </div> */}
                 </div>
             </div>
         </div>

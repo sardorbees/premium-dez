@@ -15,7 +15,7 @@ const TariffCardList = () => {
 
     const fetchTariffs = async () => {
         try {
-            const res = await axios.get('http://127.0.0.1:8000/api/tariff/api/tariffs/');
+            const res = await axios.get('https://backend-dedd.onrender.com/api/tariff/api/tariffs/');
             setTariffs(res.data);
         } catch (err) {
             console.error(err);

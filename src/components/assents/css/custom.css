@@ -103,7 +103,7 @@ h6 {
     margin: 0;
     font-weight: 700;
     line-height: 1.2em;
-    color: var(--primary-color);
+    color: none;
 }
 
 figure {
@@ -441,12 +441,18 @@ body {
     cursor: none;
 }
 
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+    color: black;
+}
+
 .section-title h2 {
     font-size: 44px;
     line-height: 1.1em;
     letter-spacing: -0.02em;
     margin-bottom: 0;
     cursor: none;
+    color: black;
 }
 
 .section-title h1 span,
@@ -6085,7 +6091,7 @@ header.main-header .header-sticky.active {
     animation: shadows 1.2s ease-in infinite, move 1.2s ease-in infinite;
     letter-spacing: 0.4rem;
     font-size: 10px;
-    color: black;
+    color: none;
     padding-top: 25px;
 }
 

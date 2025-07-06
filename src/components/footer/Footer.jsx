@@ -7,7 +7,7 @@ function Footer() {
     const [categories, setCategories] = useState([]);
 
     const fetchCategories = () => {
-        axios.get('http://127.0.0.1:8000/api/category/categories/')
+        axios.get('https://backend-dedd.onrender.com/api/category/categories/')
             .then(response => setCategories(response.data))
             .catch(error => console.error(error));
     };
@@ -22,7 +22,7 @@ function Footer() {
     useEffect(() => {
         const fetchPhoto = async () => {
             try {
-                const res = await axios.get(`http://127.0.0.1:8000/api/logo/categories/${1}/`);
+                const res = await axios.get(`https://backend-dedd.onrender.com/api/logo/categories/${1}/`);
                 setPhoto(res.data);
             } catch (error) {
                 console.error('Ошибка загрузки фото:', error);

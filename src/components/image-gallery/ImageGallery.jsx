@@ -12,7 +12,7 @@ function ImageGallery() {
     const [images, setImages] = useState([]);
 
     const fetchImages = () => {
-        axios.get('http://127.0.0.1:8000/api/gallery/images/')
+        axios.get('https://backend-dedd.onrender.com/api/gallery/images/')
             .then(res => setImages(res.data))
             .catch(err => console.error(err));
     };

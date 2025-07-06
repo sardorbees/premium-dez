@@ -12,7 +12,7 @@ function ProjectBox() {
     const [works, setWorks] = useState([]);
 
     const fetchWorks = () => {
-        axios.get('http://127.0.0.1:8000/api/our_pro/works/')
+        axios.get('https://backend-dedd.onrender.com/api/our_pro/works/')
             .then(res => setWorks(res.data))
             .catch(err => console.error(err));
     };

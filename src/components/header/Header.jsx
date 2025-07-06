@@ -21,7 +21,7 @@ function Header() {
     useEffect(() => {
         const fetchPhoto = async () => {
             try {
-                const res = await axios.get(`http://127.0.0.1:8000/api/logo/categories/${1}/`);
+                const res = await axios.get(`https://backend-dedd.onrender.com/api/logo/categories/${1}/`);
                 setPhoto(res.data);
             } catch (error) {
                 console.error('Ошибка загрузки фото:', error);
@@ -35,7 +35,7 @@ function Header() {
     const [categories, setCategories] = useState([]);
 
     const fetchCategories = () => {
-        axios.get('http://127.0.0.1:8000/api/category/categories/')
+        axios.get('https://backend-dedd.onrender.com/api/category/categories/')
             .then(response => setCategories(response.data))
             .catch(error => console.error(error));
     };
@@ -137,7 +137,6 @@ function Header() {
                                                     ))}
                                                     <li class="nav-item submenu"><a class="nav-link" href="#">Страницы</a>
                                                         <ul>
-                                                            <li class="nav-item"><a class="nav-link" href="/blog-single">Подробности блога</a></li>
                                                             <li class="nav-item"><a class="nav-link" href="/projects">Проекты</a></li>
                                                             <li class="nav-item"><a class="nav-link" href="/team">Команда</a></li>
                                                             <li class="nav-item"><a class="nav-link" href="/our-pricing">Тарифный план</a></li>

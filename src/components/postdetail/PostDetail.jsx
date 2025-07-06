@@ -11,7 +11,7 @@ const PostDetail = () => {
 
     useEffect(() => {
         const fetchPost = () => {
-            axios.get(`http://127.0.0.1:8000/api/blog/posts/${slug}/`)
+            axios.get(`https://backend-dedd.onrender.com/api/blog/posts/${slug}/`)
                 .then(res => setPost(res.data))
                 .catch(err => console.log(err));
         };
@@ -39,7 +39,23 @@ const PostDetail = () => {
                 </div>
             </div>
             <div className="page-single-post">
-                <Link to="/posts" className="text-blue-500" style={{ color: 'black', paddingLeft: '85px', fontSize: '35px', marginBottom: '25px' }}>&larr; Назад к блогам</Link>
+                <Link to="/" className="w-full px-4 py-2 rounded border
+            bg-white text-black border-gray-300
+            placeholder-gray-500
+
+            dark:bg-gray-700 dark:text-white dark:border-gray-600
+            dark:placeholder-gray-400
+
+            transition-colors duration-200">&larr; Назад на главный</Link>
+                <br /><br /><br />
+                <Link to="/posts" className="w-full px-4 py-2 rounded border
+            bg-white text-black border-gray-300
+            placeholder-gray-500
+
+            dark:bg-gray-700 dark:text-white dark:border-gray-600
+            dark:placeholder-gray-400
+
+            transition-colors duration-200">&larr; Назад к блогам</Link>
                 <br />
                 <div className="container">
                     <br /><br /><br /><br />
