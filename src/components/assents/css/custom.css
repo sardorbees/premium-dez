@@ -6172,3 +6172,16 @@ header.main-header .header-sticky.active {
         transform: translate(0px, 0px);
     }
 }
+
+.bg-whitee {
+    background: white;
+    height: 900px;
+    margin-bottom: 25px;
+    width: 450px;
+}
+
+.sssaa {
+    display: flex;
+    justify-content: space-around;
+    gap: 55px;
+}

@@ -35,7 +35,7 @@ function PageProject() {
                             <div class="col-lg-4 col-md-6 project-item-box termite">
                                 <div class="project-item wow fadeInUp" data-wow-delay="1.4s">
                                     {works.map(work => (
-                                        <div key={work.id}>
+                                        <div key={work.id} style={{width: '100%'}}>
                                             <div class="project-image">
                                                 <figure>
                                                     <img src={work.image} alt={work.title} className="w-full h-48 object-cover rounded-lg mb-2" />
