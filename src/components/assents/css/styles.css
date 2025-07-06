@@ -1,0 +1,106 @@
+/* src/styles.css */
+
+:root {
+  --bg-color: white;
+  --text-color: black;
+}
+
+.dark {
+  --bg-color: #121212;
+  --text-color: white;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.container {
+  padding: 20px;
+}
+
+.theme-toggle {
+  padding: 10px 20px;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: -10px;
+  width: 14%;
+}
+
+@media only screen and (min-width: 700px) and (max-width: 800px) {
+  .theme-toggle {
+    padding: 10px 20px;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: -10px;
+    width: 30%;
+    margin-top: 25px;
+  }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 700px) {
+  .theme-toggle {
+    padding: 10px 20px;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: -10px;
+    width: 30%;
+    margin-top: 25px;
+  }
+}
+
+
+@media only screen and (min-width: 500px) and (max-width: 600px) {
+  .theme-toggle {
+    padding: 10px 20px;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: -10px;
+    width: 30%;
+    margin-top: 25px;
+  }
+}
+
+
+
+@media only screen and (min-width: 400px) and (max-width: 500px) {
+  .theme-toggle {
+    padding: 10px 20px;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: -10px;
+    width: 30%;
+    margin-top: 25px;
+  }
+}
+
+@media only screen and (min-width: 342px) and (max-width: 400px) {
+  .theme-toggle {
+    padding: 10px 20px;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: -10px;
+    width: 33%;
+    margin-top: 25px;
+  }
+}
