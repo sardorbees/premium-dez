@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useState , useEffect,  } from 'react';
+import React, { useState, useEffect, } from 'react';
 import axios from 'axios';
 
 import Main from './components/main/Main';
@@ -27,20 +27,18 @@ import './components/assents/css/styles.css';
 import './components/assents/js/clickDetector';
 
 function App() {
-  const [isBlocked, setIsBlocked] = useState(false);
+  const [blocked, setBlocked] = useState(false);
 
   useEffect(() => {
-    const blocked = localStorage.getItem('blocked') === 'true';
-    setIsBlocked(blocked);
+    const checkBlocked = async () => {
+      const res = await axios.post("https://backend-dedd.onrender.com/api/clickapp/api/click/");
+      if (res.data.blocked) setBlocked(true);
+    };
+    checkBlocked();
   }, []);
 
-  if (isBlocked) {
-    return (
-      <div style={{ textAlign: 'center', marginTop: '100px', color: 'red' }}>
-        <h1>⛔ Доступ заблокирован</h1>
-        <p>Обнаружено подозрение на автоклик. Пожалуйста, обратитесь к администратору.</p>
-      </div>
-    );
+  if (blocked) {
+    return <h2 style={{ color: "red", textAlign: "center" }}>Доступ заблокирован</h2>;
   }
 
   return (

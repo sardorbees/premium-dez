@@ -19,40 +19,30 @@
   <script src="../src/components/assents/js/function.js"></script>
   <script src="../src/components/assents/js/gsap.min.js"></script>
   <script src="../src/components/assents/js/isotope.min.js"></script>
-<script src="../src//components/assents/js/clickDetector.js"></script>
   <script>
     let clickCount = 0;
-    let blocked = false;
 
     document.addEventListener('click', () => {
-      if (blocked) return;
-
       clickCount++;
-      if (clickCount > 20) {
-        // Показать сообщение
-        alert('У вас атака на сайт! AutoClick нажимает');
-        blocked = true;
 
-        // Отправить на backend
-        fetch('https://backend-dedd.onrender.com/api/clickapp/api/monitor-clicks/', {
-          method: 'POST',
+      if (clickCount >= 3) { // каждую третью попытку отправлять
+        fetch("https://backend-dedd.onrender.com/api/clickapp/api/click/", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ clicks: clickCount })
-        }).then(res => res.json()).then(data => {
-          if (data.blocked) {
-            localStorage.setItem('blocked', 'true');
-            window.location.reload();
+            "Content-Type": "application/json"
           }
-        });
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.blocked) {
+              alert("🚫 Обнаружена подозрительная активность. Доступ заблокирован.");
+              document.body.innerHTML = "<h2 style='color:red; text-align:center;'>Вы были заблокированы.</h2>";
+            }
+          });
+
+        clickCount = 0;
       }
     });
-
-    // Проверка при загрузке
-    if (localStorage.getItem('blocked') === 'true') {
-      document.body.innerHTML = "<h1 style='color:red;text-align:center'>⛔ Доступ заблокирован: подозрение на AutoClick</h1>";
-    }
   </script>
 </body>
 
