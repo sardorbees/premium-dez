@@ -21,27 +21,22 @@
   <script src="../src/components/assents/js/isotope.min.js"></script>
   <script>
     let clickCount = 0;
+    let lastClick = Date.now();
 
     document.addEventListener('click', () => {
       clickCount++;
+      const now = Date.now();
+      if (now - lastClick > 5000) clickCount = 1;
+      lastClick = now;
 
-      if (clickCount >= 3) { // каждую третью попытку отправлять
-        fetch("https://backend-dedd.onrender.com/api/clickapp/api/click/", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          }
-        })
-          .then(res => res.json())
-          .then(data => {
-            if (data.blocked) {
-              alert("🚫 Обнаружена подозрительная активность. Доступ заблокирован.");
-              document.body.innerHTML = "<h2 style='color:red; text-align:center;'>Вы были заблокированы.</h2>";
-            }
-          });
-
-        clickCount = 0;
-      }
+      fetch('https://backend-dedd.onrender.com/api/user_send/api/track-click/', {
+        method: 'POST'
+      }).then(res => {
+        if (!res.ok) {
+          alert('🚨 Вы заблокированы.');
+          document.body.innerHTML = '<h1>Доступ закрыт</h1>';
+        }
+      });
     });
   </script>
 </body>

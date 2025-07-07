@@ -24,25 +24,12 @@ import TariffCardList from './components/tariffcardlist/TariffCardList';
 import Comments from './components/comments/Comments';
 import { ThemeProvider } from './components/themetoggle/ThemeContext';
 import './components/assents/css/styles.css';
-import './components/assents/js/clickDetector';
+import ClickTracker from './components/clicktracker/ClickTracker';
 
 function App() {
-  const [blocked, setBlocked] = useState(false);
-
-  useEffect(() => {
-    const checkBlocked = async () => {
-      const res = await axios.post("https://backend-dedd.onrender.com/api/clickapp/api/click/");
-      if (res.data.blocked) setBlocked(true);
-    };
-    checkBlocked();
-  }, []);
-
-  if (blocked) {
-    return <h2 style={{ color: "red", textAlign: "center" }}>Доступ заблокирован</h2>;
-  }
-
   return (
     <div className="App">
+      <ClickTracker />
       <ThemeProvider>
         <BrowserRouter>
           <Header />

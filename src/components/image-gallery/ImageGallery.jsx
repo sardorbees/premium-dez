@@ -31,13 +31,7 @@ function ImageGallery() {
                         <div class="col-lg-12">
 
                             <div class="page-header-box">
-                                <h1 class="text-anime-style-2" data-cursor="-opaque">Our gallery</h1>
-                                <nav class="wow fadeInUp">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="./">home</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">gallery</li>
-                                    </ol>
-                                </nav>
+                                <h1 class="text-anime-style-2" data-cursor="-opaque">Нашы галерия</h1>
                             </div>
 
                         </div>
