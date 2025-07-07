@@ -82,7 +82,7 @@ function Header() {
 
                             <a class="navbar-brand" href="./">
                                 {photo?.image && (
-                                    <img src={photo.image} alt="Logo" style={{ width: '190px'}} />
+                                    <img src={photo.image} alt="Logo" style={{ width: '190px' }} />
                                 )}
                             </a>
 
@@ -98,7 +98,7 @@ function Header() {
                                         <li class="nav-item submenu"><a class="nav-link" href="#">Страницы</a>
                                             <ul>
                                                 <li class="nav-item"><a class="nav-link" href="/projects">Проекты</a></li>
-                                                {/* <li class="nav-item"><a class="nav-link" href="/team">Команда</a></li> */}
+                                                <li class="nav-item"><a class="nav-link" href="/comments">Написать отзыв</a></li>
                                                 <li class="nav-item"><a class="nav-link" href="/our-pricing">Тарифный план</a></li>
                                                 <li class="nav-item"><a class="nav-link" href="/testimonials">Отзывы</a></li>
                                                 <li class="nav-item"><a class="nav-link" href="/image-gallery">Галерея изображений</a></li>
@@ -138,6 +138,7 @@ function Header() {
                                                     <li class="nav-item submenu"><a class="nav-link" href="#">Страницы</a>
                                                         <ul>
                                                             <li class="nav-item"><a class="nav-link" href="/projects">Проекты</a></li>
+                                                            <li class="nav-item"><a class="nav-link" href="/comments">Написать отзыв</a></li>
                                                             <li class="nav-item"><a class="nav-link" href="/team">Команда</a></li>
                                                             <li class="nav-item"><a class="nav-link" href="/our-pricing">Тарифный план</a></li>
                                                             <li class="nav-item"><a class="nav-link" href="/testimonials">Отзывы</a></li>

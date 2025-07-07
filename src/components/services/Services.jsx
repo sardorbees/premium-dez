@@ -20,11 +20,6 @@ function Services() {
                         <div class="col-lg-12">
                             <div class="page-header-box">
                                 <h1 class="text-anime-style-2" data-cursor="-opaque">Наши услуги</h1>
-                                <nav class="wow fadeInUp">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item active" aria-current="page">Наши услуги</li>
-                                    </ol>
-                                </nav>
                             </div>
                         </div>
                     </div>

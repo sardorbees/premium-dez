@@ -33,8 +33,8 @@ const TariffCardList = () => {
             {tariffs.length === 0 ? (
                 <p className="text-center text-gray-400 col-span-full">Нет активных скидок на сегодня.</p>
             ) : tariffs.map(tariff => (
-                <div key={tariff.id} class="col-lg-4 col-md-6" style={{marginTop: '24px'}}>
-                    <img src={tariff.image} alt={tariff.title} className="w-full h-40 object-cover rounded-lg mb-4" />
+                <div key={tariff.id} class="col-lg-4 col-md-6" style={{marginTop: '24px', border: '2px solid black', borderRadius: '20px'}}>
+                    <img src={tariff.image} alt={tariff.title} className="w-full h-40 object-cover rounded-lg mb-4" style={{marginTop: '25px'}}/>
                     <div class="pricing-header">
                         <h3>{tariff.title}</h3>
                     </div>
@@ -58,7 +58,7 @@ const TariffCardList = () => {
                         </ul>
                     </div>
                     <div class="pricing-btn">
-                        <a href="/contact" className='btn-default' style={{ color: 'white' }}>Начните сейчас</a>
+                        <a href="/contact" className='btn-default' style={{ color: 'white', marginTop: '-25px', marginBottom: '25px' }}>Начните сейчас</a>
                     </div>
                 </div>
             ))}

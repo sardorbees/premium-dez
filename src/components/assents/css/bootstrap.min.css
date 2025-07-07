@@ -1608,7 +1608,16 @@ progress {
 
     .col-lg-12 {
         flex: 0 0 auto;
-        width: 100%
+        width: 100%;
+    }
+
+    .col-lg-121 {
+        flex: 0 0 auto;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 31px auto;
+        gap: 80px;
     }
 
     .offset-lg-0 {
@@ -2430,12 +2439,14 @@ progress {
     background-clip: padding-box;
     border: var(--bs-border-width) solid var(--bs-border-color);
     border-radius: var(--bs-border-radius);
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    outline: none;
 }
 
 @media (prefers-reduced-motion:reduce) {
     .form-control {
-        transition: none
+        transition: none;
+        outline: none;
     }
 }
 

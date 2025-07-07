@@ -18,7 +18,7 @@ function Main() {
                         <div class="col-lg-6">
                             <div class="hero-content">
                                 <div class="section-title">
-                                    <h3 class="wow fadeInUp">Your Shield Against Unwanted Guests</h3>
+                                    <h3 class="wow fadeInUp">Ваш щит от непрошеных гостей</h3>
                                     <h1 class="text-anime-style-2" data-cursor="-opaque">Дезинфекция квартир, домов, офисов в Ташкенте</h1>
                                     <p class="wow fadeInUp" data-wow-delay="0.2s">Выезд за 30 минут · От 49 000 сум · Гарантия результата</p>
                                 </div>

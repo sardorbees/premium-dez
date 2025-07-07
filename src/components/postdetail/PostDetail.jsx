@@ -70,9 +70,6 @@ const PostDetail = () => {
 
                                 <div class="post-entry">
                                     <p class="wow fadeInUp">{post.title}</p>
-
-                                    <p class="wow fadeInUp" data-wow-delay="0.2s">content</p>
-
                                 </div>
 
                                 <div class="post-tag-links">

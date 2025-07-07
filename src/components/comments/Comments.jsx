@@ -21,7 +21,6 @@ const Comments = () => {
         avatar: null,
     });
 
-
     const fetchComments = async () => {
         try {
             const res = await axios.get(API_URL);
@@ -32,7 +31,9 @@ const Comments = () => {
     };
 
     useEffect(() => {
-        fetchComments();
+        // Автообновление каждую секунду
+        const interval = setInterval(fetchComments, 1000);
+        return () => clearInterval(interval);
     }, []);
 
     const handleChange = (e) => {
@@ -64,7 +65,6 @@ const Comments = () => {
                 });
             }
             setForm({ id: null, name: '', text: '', rating: 1, avatar: null });
-            fetchComments();
         } catch (err) {
             console.error('Ошибка при отправке:', err);
         }
@@ -74,12 +74,10 @@ const Comments = () => {
         setForm({ ...comment, avatar: null });
     };
 
-
     const handleDelete = async (id) => {
         if (window.confirm('Удалить комментарий?')) {
             try {
                 await axios.delete(`${API_URL}${id}/`);
-                fetchComments();
             } catch (err) {
                 console.error('Ошибка при удалении:', err);
             }
@@ -87,36 +85,34 @@ const Comments = () => {
     };
 
     return (
-        <div class="col-lg-6" style={{ textAlign: 'center', alignContent: 'center', alignItems: 'center', margin: '0 auto' }}>
-            <div class="contact-us-form">
-                <form onSubmit={handleSubmit} className="bg-gray-100 p-4 rounded space-y-4" id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp"
-                    data-wow-delay="0.25s">
-                    <h2 className="text-lg font-bold">{form.id ? 'Редактировать' : 'Оставить отзыв'}</h2>
-                    <br />
+        <div className="col-lg-6" style={{ textAlign: 'center', margin: '0 auto' }}>
+            <div className="contact-us-form">
+                <h2 className="text-lg font-bold">{form.id ? 'Редактировать' : 'Оставить отзыв'}</h2>
+                <form onSubmit={handleSubmit} className="bg-gray-100 p-4 rounded space-y-4 wow fadeInUp" data-wow-delay="0.25s">
                     <div className="row">
-                        <div class="form-group col-md-6 mb-4">
+                        <div className="form-group col-md-12 mb-4">
                             <input
                                 type="text"
                                 name="name"
                                 value={form.name}
                                 onChange={handleChange}
-                                class="form-control" id="fname"
+                                className="form-control"
                                 placeholder="Ваше имя"
-                                required />
-                            <div class="help-block with-errors"></div>
+                                required
+                                style={{ outline: 'none' }}
+                            />
                         </div>
                     </div>
-                    <br />
-                    <div class="form-group col-md-12 mb-4">
-                        <input name="text"
+                    <div className="form-group col-md-12 mb-4">
+                        <input
+                            name="text"
                             value={form.text}
                             onChange={handleChange}
                             required
-                            placeholder="Ваш отзыв" class="form-control"
+                            placeholder="Ваш отзыв"
+                            className="form-control"
                         />
-                        <div class="help-block with-errors"></div>
                     </div>
-                    <br />
                     <div className="flex gap-3 items-center">
                         <label>Оценка:</label>
                         {[1, 2, 3, 4, 5].map((r) => (
@@ -134,75 +130,61 @@ const Comments = () => {
                     </div>
                     <br />
                     <input type="file" name="avatar" onChange={handleChange} accept="image/*" />
-                    <br /><br />
-                    <button
-                        type="submit"
-                        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" style={{ background: 'black' }}
-                    >
+                    <button type="submit" className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 mt-3">
                         {form.id ? 'Сохранить' : 'Отправить'}
                     </button>
-                    <br />
                 </form>
             </div>
-            <br />
-            <div className="page-testimonial">
+
+            <div className="page-testimonial mt-5">
                 <div className="container">
+                    <h2 className="text-xl font-bold">Отзывы</h2>
                     <div className="row">
-                        <div className="col-lg-12">
-                            <h2 className="text-xl font-bold">Отзывы</h2>
-                            {/* <h2 className="text-xl font-bold">Если изменить отзывы должна из сверху изменить <br /> <span style={{ color: 'green', marginTop: '15px' }}>'Редактировать'</span></h2> */}
-                            <br />
-                            {comments.map((comment) => (
-                                <div key={comment.id} className="col-lg-4 col-md-6">
-                                    <div className="testimonial-item wow fadeInUp">
-                                        <div class="client-author-image">
-                                            <figure class="image-anime">
-                                                {comment.avatar && (
-                                                    <img
-                                                        src={comment.avatar}
-                                                        alt="avatar"
-                                                        className="w-12 h-12 rounded-full object-cover"
-                                                        style={{ width: '180px', borderRadius: '50%' }}
-                                                    />
-                                                )}
-                                            </figure>
-                                        </div>
-
-                                        <div class="client-testimonial-rating">
-                                            <ul>
-                                                <span className="text-yellow-500">★{comment.rating}</span>
-                                            </ul>
-                                        </div>
-
-                                        <div class="client-author-content">
-                                            <div class="author-content">
-                                                <h3>{comment.name}</h3>
-                                                <p>{comment.text}</p>
-                                            </div>
-
-                                            <div class="client-author-logo">
-                                                <img src="images/icon-testimonial-logo.svg" alt="" />
-                                            </div>
-
-                                        </div>
-
-                                        <div className="flex-1" style={{ columnGap: '125px' }}>
-                                            {comment.admin_reply && (
-                                                <div className="mt-2 bg-blue-50 border-l-4 border-blue-400 p-2 text-sm">
-                                                    <strong>Ответ администратора:</strong>
-                                                    <br />
-                                                    {comment.admin_reply}
-                                                </div>
+                        {comments.map((comment) => (
+                            <div key={comment.id} className="col-lg-4 col-md-6">
+                                <div className="testimonial-item wow fadeInUp">
+                                    <div className="client-author-image">
+                                        <figure className="image-anime">
+                                            {comment.avatar && (
+                                                <img
+                                                    src={comment.avatar}
+                                                    alt="avatar"
+                                                    className="w-12 h-12 rounded-full object-cover"
+                                                    style={{ width: '180px', borderRadius: '50%', height: '139px' }}
+                                                />
                                             )}
-
-                                            {/* {!comment.is_approved && (
-                                                <p className="text-xs text-red-600 mt-1" style={{ paddingTop: '20px' }}>⏳ Ожидает модерации</p>
-                                            )} */}
+                                        </figure>
+                                    </div>
+                                    <div className="client-testimonial-rating">
+                                        <ul>
+                                            <span className="text-yellow-500">★{comment.rating}</span>
+                                        </ul>
+                                    </div>
+                                    <div className="client-author-content">
+                                        <div className="author-content">
+                                            <h3>{comment.name}</h3>
+                                            <p>{comment.text}</p>
+                                        </div>
+                                        <div className="client-author-logo">
+                                            <img src="images/icon-testimonial-logo.svg" alt="" />
                                         </div>
                                     </div>
+                                    <div className="flex-1" style={{ columnGap: '125px' }}>
+                                        {comment.admin_reply && (
+                                            <div className="mt-2 bg-blue-50 border-l-4 border-blue-400 p-2 text-sm">
+                                                <strong>Ответ администратора:</strong>
+                                                <br />
+                                                {comment.admin_reply}
+                                            </div>
+                                        )}
+                                    </div>
+                                    <div className="mt-2">
+                                        <button onClick={() => handleEdit(comment)} className="btn btn-sm btn-warning mr-2">Редактировать</button>
+                                        <button onClick={() => handleDelete(comment.id)} className="btn btn-sm btn-danger">Удалить</button>
+                                    </div>
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

@@ -19,11 +19,6 @@ function ContactUs() {
                         <div class="col-lg-12">
                             <div class="page-header-box">
                                 <h1 class="text-anime-style-2" data-cursor="-opaque">Связаться с нами</h1>
-                                <nav class="wow fadeInUp">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item active" aria-current="page">Связаться с нами</li>
-                                    </ol>
-                                </nav>
                             </div>
                         </div>
                     </div>
