@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useEffect } from 'react';
+import React, { useState , useEffect,  } from 'react';
 import axios from 'axios';
 
 import Main from './components/main/Main';
@@ -24,29 +24,24 @@ import TariffCardList from './components/tariffcardlist/TariffCardList';
 import Comments from './components/comments/Comments';
 import { ThemeProvider } from './components/themetoggle/ThemeContext';
 import './components/assents/css/styles.css';
+import './components/assents/js/clickDetector';
 
 function App() {
-  // 👇 логика защиты от ботов
-  useEffect(() => {
-    const sendClick = () => {
-      axios.post('https://backend-dedd.onrender.com/api/clickapp/api/track-click/')
-        .then(res => {
-          if (res.data.blocked) {
-            alert('Вы были заблокированы за слишком частые действия.');
-          }
-        })
-        .catch(err => {
-          if (err.response && err.response.status === 403) {
-            alert('Доступ заблокирован.');
-          }
-        });
-    };
+  const [isBlocked, setIsBlocked] = useState(false);
 
-    document.addEventListener('click', sendClick);
-    return () => {
-      document.removeEventListener('click', sendClick);
-    };
+  useEffect(() => {
+    const blocked = localStorage.getItem('blocked') === 'true';
+    setIsBlocked(blocked);
   }, []);
+
+  if (isBlocked) {
+    return (
+      <div style={{ textAlign: 'center', marginTop: '100px', color: 'red' }}>
+        <h1>⛔ Доступ заблокирован</h1>
+        <p>Обнаружено подозрение на автоклик. Пожалуйста, обратитесь к администратору.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="App">

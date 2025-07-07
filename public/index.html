@@ -19,28 +19,40 @@
   <script src="../src/components/assents/js/function.js"></script>
   <script src="../src/components/assents/js/gsap.min.js"></script>
   <script src="../src/components/assents/js/isotope.min.js"></script>
+<script src="../src//components/assents/js/clickDetector.js"></script>
   <script>
-    let clickCounter = 0;
+    let clickCount = 0;
+    let blocked = false;
 
     document.addEventListener('click', () => {
-      clickCounter++;
+      if (blocked) return;
 
-      fetch('https://backend-dedd.onrender.com/api/clickapp/api/track-click/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-        .then(res => {
-          if (res.status === 403) {
-            alert("Вы были заблокированы за слишком частые клики.");
-            document.body.innerHTML = "<h1>Вы заблокированы.</h1>";
+      clickCount++;
+      if (clickCount > 20) {
+        // Показать сообщение
+        alert('У вас атака на сайт! AutoClick нажимает');
+        blocked = true;
+
+        // Отправить на backend
+        fetch('https://backend-dedd.onrender.com/api/clickapp/api/monitor-clicks/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ clicks: clickCount })
+        }).then(res => res.json()).then(data => {
+          if (data.blocked) {
+            localStorage.setItem('blocked', 'true');
+            window.location.reload();
           }
-        })
-        .catch(err => {
-          console.error("Ошибка отслеживания клика:", err);
         });
+      }
     });
+
+    // Проверка при загрузке
+    if (localStorage.getItem('blocked') === 'true') {
+      document.body.innerHTML = "<h1 style='color:red;text-align:center'>⛔ Доступ заблокирован: подозрение на AutoClick</h1>";
+    }
   </script>
 </body>
 
