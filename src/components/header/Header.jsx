@@ -130,16 +130,18 @@ function Header() {
                             </div>
                             <div class="navbar-toggle">
                                 <>
-                                    <Button variant="green" onClick={handleShow}>
-                                        <img src={burger} alt="" width={25} className='slicknav_btn' style={{ border: 'none', outline: 'none' }} />
-                                    </Button>
-
+                                    <div className="sodi">
+                                        <Navbar className='ifgb' />
+                                        <Button variant="green" onClick={handleShow}>
+                                            <img src={burger} alt="" width={25} className='slicknav_btn' style={{ border: 'none', outline: 'none' }} />
+                                        </Button>
+                                    </div>
                                     <Offcanvas show={show} onHide={handleClose}>
                                         <Offcanvas.Header closeButton>
                                             <Offcanvas.Title>
-                                                {/* {photo?.image && (
-                                                    <img src={photo.image} alt="Logo" style={{ width: '190px' }} />
-                                                )} */}
+                                                {photo?.image && (
+                                                    <img src={photo.image} alt="Logo" style={{ width: '240px' }} />
+                                                )}
                                             </Offcanvas.Title>
                                         </Offcanvas.Header>
                                         <Offcanvas.Body>

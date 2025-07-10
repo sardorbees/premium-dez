@@ -26,7 +26,7 @@ export default function Navbar() {
       <div>
         {user ? (
           <>
-            <Link to="/profile" style={{ marginRight: "10px", display: "flex", alignItems: "center" }}>
+            <Link to="/profile" style={{ marginRight: "15px", display: "flex", alignItems: "center" }}>
               {user.image && (
                 <img
                   src={user.image}
