@@ -1,18 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import API from "../api";
 
 export default function Navbar() {
   const [user, setUser] = useState(null);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const token = localStorage.getItem("access");
-    if (!token) return;
-    API.get("api/accounts/profile/")
-      .then((res) => setUser(res.data))
-      .catch(() => { });
-  }, []);
 
   useEffect(() => {
     const update = () => {
@@ -22,10 +13,14 @@ export default function Navbar() {
         .then((res) => setUser(res.data))
         .catch(() => setUser(null));
     };
+
+    update(); // начальная загрузка
+
+    // слушаем событие при login/register/edit/logout
     window.addEventListener("authChanged", update);
+
     return () => window.removeEventListener("authChanged", update);
   }, []);
-
   return (
     <nav style={{ padding: "10px" }}>
       <div>

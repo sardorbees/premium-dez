@@ -9,7 +9,7 @@ import '../assents/css/mousecursor.css'
 import '../assents/css/slicknav.min.css'
 import '../assents/css/swiper-bundle.min.css'
 
-const API_URL = 'http://127.0.0.1:8000/api/comment/comments/';
+const API_URL = 'https://backend-dedd.onrender.com/api/comment/comments/';
 
 const Comments = () => {
     const [comments, setComments] = useState([]);

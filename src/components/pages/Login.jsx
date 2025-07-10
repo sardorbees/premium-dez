@@ -15,8 +15,8 @@ export default function LoginPage() {
       const res = await API.post("api/accounts/login/", form);
       localStorage.setItem("access", res.data.access);
       localStorage.setItem("refresh", res.data.refresh);
-      window.dispatchEvent(new Event("authChanged"));
-      navigate("/profile");
+      window.dispatchEvent(new Event("authChanged")); // 👈 добавь это
+      navigate("/login");
     } catch {
       alert("Неверные данные входа");
     }
