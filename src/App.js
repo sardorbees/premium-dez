@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import React, { useState, useEffect, } from 'react';
 import axios from 'axios';
 
@@ -24,21 +24,87 @@ import TariffCardList from './components/tariffcardlist/TariffCardList';
 import Comments from './components/comments/Comments';
 import { ThemeProvider } from './components/themetoggle/ThemeContext';
 import './components/assents/css/styles.css';
-import ClickTracker from './components/clicktracker/ClickTracker';
+// import ClickTracker from './components/clicktracker/ClickTracker';
+import ServiceList from './components/servicelist/ServiceList';
+import Language from './components/language/Language';
+import ServiceCard from './components/servicecard/ServiceCard';
+import './components/i18n';
+
+import Register from './components/pages/Register'
+import Login from './components/pages/Login'
+import Profile from './components/pages/Profile'
+import EditProfile from './components/pages/EditProfile'
+import Dashboard from './components/pages/Dashboard'
+import Logout from './components/pages/Logout'
+import Navbar from './components/navbar/Navbar';
+import PrivateRoute from "./components/privateroute/PrivateRoute";
 
 function App() {
+  // const [blocked, setBlocked] = useState(false);
+  // const [message, setMessage] = useState("");
+
+  // const sendClick = async () => {
+  //   try {
+  //     const res = await axios.post("http://127.0.0.1:8000/api/clickapp/api/track-click/");
+  //     if (res.data.blocked) {
+  //       setBlocked(true);
+  //       setMessage("Вы заблокированы.");
+  //     }
+  //   } catch (err) {
+  //     if (err.response && err.response.status === 403) {
+  //       setBlocked(true);
+  //       setMessage(err.response.data.message);
+  //     } else {
+  //       console.error("Ошибка:", err);
+  //     }
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   const clickHandler = () => {
+  //     sendClick();
+  //   };
+
+  //   document.addEventListener("click", clickHandler);
+  //   return () => document.removeEventListener("click", clickHandler);
+  // }, []);
+
+  // if (blocked) {
+  //   return (
+  //     <div style={{ textAlign: "center", marginTop: "100px", color: "red", fontSize: "20px" }}>
+  //       <h2>{message}</h2>
+  //     </div>
+  //   );
+  // }
   return (
     <div className="App">
-      <ClickTracker />
+      {/* <ClickTracker /> */}
       <ThemeProvider>
         <BrowserRouter>
           <Header />
+          {/* <Navbar /> */}
           <Routes>
             <Route path='/' element={<Main />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Logout />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/profile"
+              element={
+                <PrivateRoute>
+                  <Profile />
+                </PrivateRoute>
+              }
+            />
+            <Route path="/edit-profile" element={<EditProfile />} />
             <Route path='/about' element={<About />} />
+            <Route path='/servicecard' element={<ServiceCard />} />
             <Route path='/comments' element={<Comments />} />
             <Route path='/tariffcardlist' element={<TariffCardList />} />
             <Route path='/our-faqs' element={<OurFaqs />} />
+            <Route path='/servicelist' element={<ServiceList />} />
+            <Route path='/language' element={<Language />} />
             <Route path='/our-features' element={<OurFeatures />} />
             <Route path='/our-pricing' element={<OurPricing />} />
             <Route path='/services' element={<Services />} />

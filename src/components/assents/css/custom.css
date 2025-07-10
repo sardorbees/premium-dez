@@ -4313,7 +4313,7 @@ header.main-header .header-sticky.active {
 .contact-us-form,
 .contact-us-image {
     width: 50%;
-margin: 0 auto;
+    margin: 0 auto;
 }
 
 .contact-us-form {
@@ -6304,4 +6304,9 @@ margin: 0 auto;
     display: flex;
     justify-content: space-around;
     gap: 55px;
+}
+
+.nav {
+    display: flex;
+    column-gap: 25px;
 }

@@ -1,4 +1,5 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import axios from 'axios';
 import '../assents/css/all.min.css'
 import '../assents/css/animate.css'
@@ -16,7 +17,21 @@ import call from '../assents/img/icon/call.png'
 import telegram from '../assents/img/icon/telegram.png'
 import instagram from '../assents/img/icon/instagram.png'
 import ThemeToggle from '../themetoggle/ThemeToggle';
+import Logout from '../pages/Logout'
+import Navbar from '../navbar/Navbar'
 function Header() {
+    const [user, setUser] = useState(null)
+
+    useEffect(() => {
+        const token = localStorage.getItem('access')
+        if (token) {
+            axios.get('/api/accounts/profile/', {
+                headers: { Authorization: `Bearer ${token}` }
+            }).then(res => {
+                setUser(res.data)
+            }).catch(() => setUser(null))
+        }
+    }, [])
     const [photo, setPhoto] = useState(null);
     useEffect(() => {
         const fetchPhoto = async () => {
@@ -105,6 +120,7 @@ function Header() {
                                                 <li class="nav-item"><a class="nav-link" href="/video-gallery">Видеогалерея</a></li>
                                             </ul>
                                         </li>
+                                        <Navbar />
                                     </ul>
                                 </div>
 
@@ -121,9 +137,9 @@ function Header() {
                                     <Offcanvas show={show} onHide={handleClose}>
                                         <Offcanvas.Header closeButton>
                                             <Offcanvas.Title>
-                                                {photo?.image && (
+                                                {/* {photo?.image && (
                                                     <img src={photo.image} alt="Logo" style={{ width: '190px' }} />
-                                                )}
+                                                )} */}
                                             </Offcanvas.Title>
                                         </Offcanvas.Header>
                                         <Offcanvas.Body>

@@ -18,20 +18,21 @@ function Footer() {
         return () => clearInterval(interval);
     }, []);
 
-    const [photo, setPhoto] = useState(null);
-    useEffect(() => {
-        const fetchPhoto = async () => {
-            try {
-                const res = await axios.get(`https://backend-dedd.onrender.com/api/logo/categories/${1}/`);
-                setPhoto(res.data);
-            } catch (error) {
-                console.error('Ошибка загрузки фото:', error);
-            }
-        };
-        fetchPhoto();
-        const intervalId = setInterval(fetchPhoto, 1000);
-        return () => clearInterval(intervalId);
-    }, [photo]);
+    // const [photo, setPhoto] = useState(null);
+    // useEffect(() => {
+    //     const fetchPhoto = async () => {
+    //         try {
+    //             const res = await axios.get(`https://backend-dedd.onrender.com/api/logo/categories/${1}/`);
+    //             setPhoto(res.data);
+    //         } catch (error) {
+    //             console.error('Ошибка загрузки фото:', error);
+    //         }
+    //     };
+    //     fetchPhoto();
+    //     const intervalId = setInterval(fetchPhoto, 1000);
+    //     return () => clearInterval(intervalId);
+    // }, [photo]);
+
     return (
         <div>
             <footer class="main-footer dark-section">
@@ -40,9 +41,9 @@ function Footer() {
                         <div class="col-lg-5">
                             <div class="about-footer footer-links">
                                 <a class="navbar-brand" href="./">
-                                    {photo?.image && (
+                                    {/* {photo?.image && (
                                         <img src={photo.image} alt="Logo" style={{ width: '190px' }} />
-                                    )}
+                                    )} */}
                                 </a>
                                 <br /><br /><br />
                                 <h3>Дезинфекция квартир, домов, офисов в Ташкенте</h3>
