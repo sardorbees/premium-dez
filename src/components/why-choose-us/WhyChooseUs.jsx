@@ -24,7 +24,7 @@ function WhyChooseUs() {
 
                         <div class="section-title section-title-center">
                             <h3 class="wow fadeInUp">почему выбирают нас</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Что делает нас лучшими <span>выбор для
+                            <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Что делает нас лучшими </span><span>выбор для
                                 вас</span></h2>
                             <p class="wow fadeInUp" data-wow-delay="0.2s">Мы понимаем, насколько неприятными и разрушительными могут быть вредители, поэтому мы стремимся предоставлять быстрые, надежные и эффективные решения.
                             </p>

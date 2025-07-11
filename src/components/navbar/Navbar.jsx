@@ -22,7 +22,7 @@ export default function Navbar() {
     return () => window.removeEventListener("authChanged", update);
   }, []);
   return (
-    <nav style={{ padding: "10px" }}>
+    <nav style={{ padding: "25px" }}>
       <div>
         {user ? (
           <>
@@ -33,15 +33,15 @@ export default function Navbar() {
                   alt="avatar"
                   width="35"
                   height="35"
-                  style={{ borderRadius: "50%", objectFit: "cover", marginRight: "8px" }}
+                  style={{ borderRadius: "50%", objectFit: "cover", marginRight: "8px", color: 'var(--text-color)' }}
                 />
               )}
-              <span style={{ color: 'black' }}>{user.first_name || user.username}</span>
+              <span style={{ color: 'var(--text-color)' }}>{user.first_name || user.username}</span>
             </Link>
           </>
         ) : (
           <>
-            <Link to="/register" style={{ color: 'black' }}>Регистрация</Link> | <Link to="/login" style={{ color: 'black' }}>Вход</Link>
+            <Link to="/register" style={{ color: 'var(--text-color)' }}>Регистрация</Link> | <Link to="/login" style={{ color: 'var(--text-color)' }}>Вход</Link>
           </>
         )}
       </div>

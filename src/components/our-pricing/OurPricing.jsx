@@ -18,7 +18,7 @@ function OurPricing() {
 
                         <div class="section-title section-title-center">
                             <h3 class="wow fadeInUp">наш тарифный план</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Качественные услуги по борьбе с вредителями в
+                            <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Качественные услуги по борьбе с вредителями в</span>
                                 <span> конкурентоспособные цены</span></h2>
                         </div>
 

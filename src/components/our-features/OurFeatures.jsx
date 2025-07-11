@@ -23,7 +23,7 @@ function OurFeatures() {
                         <div class="our-features-content">
                             <div class="section-title">
                                 <h3 class="wow fadeInUp">Наши особенности</h3>
-                                <h2 class="text-anime-style-2" data-cursor="-opaque">Ваш надежный партнер в борьбе с вредителями
+                                <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Ваш надежный партнер в борьбе с вредителями</span>
                                     <span> контроль совершенства</span></h2>
                                 <p class="wow fadeInUp" data-wow-delay="0.2s">В Ташкенте, Самарканде и Гулистане: Дезинфекция, уничтожение насекомых, бактерий и вирусов с гарантией.</p>
                             </div>

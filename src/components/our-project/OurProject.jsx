@@ -17,7 +17,7 @@ function OurProject() {
                     <div class="col-lg-12">
                         <div class="section-title section-title-center">
                             <h3 class="wow fadeInUp">Наше Работы</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Изучите наш проверенный послужной список
+                            <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Изучите наш проверенный послужной список</span>
                                 <span> Решения, свободные от вредителей</span></h2>
                         </div>
                     </div>

@@ -47,7 +47,7 @@ function AboutUs() {
                         <div class="about-us-content">
                             <div class="section-title">
                                 <h3 class="wow fadeInUp">о нас</h3>
-                                <h2 class="text-anime-style-2" data-cursor="-opaque">Защита дома, <span>бизнеса и сообществ</span></h2>
+                                <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Защита дома,</span> <span>бизнеса и сообществ</span></h2>
                                 <p class="wow fadeInUp" data-wow-delay="0.2s">Наша миссия проста: предоставлять надежные
                                     услуги по борьбе с вредителями, которые гарантируют чистую, безопасную и комфортную среду для
                                     каждого. Благодаря многолетнему опыту и подходу, ориентированному на клиента, мы делаем все возможное,

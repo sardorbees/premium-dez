@@ -21,7 +21,7 @@ function OurTestimonials() {
 
                         <div class="section-title section-title-center">
                             <h3 class="wow fadeInUp">отзывы</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Сотни людей доверяют нам надежность <span>решения для борьбы с вредителями</span></h2>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Сотни людей доверяют нам надежность </span><span>решения для борьбы с вредителями</span></h2>
                         </div>
 
                     </div>

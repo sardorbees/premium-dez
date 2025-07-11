@@ -28,7 +28,7 @@ function OurServices() {
 
                         <div class="section-title section-title-center">
                             <h3 class="wow fadeInUp">услуги</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Экспертные решения для каждого <span>вредитель
+                            <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Экспертные решения для каждого </span><span>вредитель
                                 проблема</span></h2>
                         </div>
 

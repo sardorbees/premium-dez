@@ -182,7 +182,7 @@ function About() {
 
                                 <div class="section-title section-title-center">
                                     <h3 class="wow fadeInUp">Наше наследие</h3>
-                                    <h2 class="text-anime-style-2" data-cursor="-opaque">Формирование совершенства в <span>борьба с вредителями</span></h2>
+                                    <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Формирование совершенства в </span><span>борьба с вредителями</span></h2>
                                     <p>Сохраняем наше наследие с помощью инновационных и надежных решений по борьбе с вредителями, гарантируя безопасность и удовлетворение в каждом защищаемом нами пространстве.</p>
                                 </div>
 
@@ -195,17 +195,6 @@ function About() {
                         <div class="col-lg-6">
 
                             <div class="legacy-item-list">
-
-                                <div class="legacy-item wow fadeInUp">
-                                    <div class="icon-box">
-                                        <img src={logo2} alt="" />
-                                    </div>
-                                    <div class="legacy-item-content">
-                                        <h3>Expert techniques</h3>
-                                        <p>Using advanced tools and proven methods to ensure long-lasting pest control solutions.</p>
-                                    </div>
-                                </div>
-
                                 <div class="legacy-item wow fadeInUp" data-wow-delay="0.2s">
                                     <div class="icon-box">
                                         <img src={logo3} alt="" />

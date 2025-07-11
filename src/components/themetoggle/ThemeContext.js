@@ -42,7 +42,7 @@ export const ThemeProvider = ({ children }) => {
 
     try {
       await axios.patch(
-        "/api/theme/",
+        "http://127.0.0.1:8000/api/darkplan/api/theme/",
         { theme: newTheme },
         {
           headers: {
