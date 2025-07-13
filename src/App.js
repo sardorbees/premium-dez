@@ -39,7 +39,9 @@ import Logout from './components/pages/Logout'
 import Navbar from './components/navbar/Navbar';
 import PrivateRoute from "./components/privateroute/PrivateRoute";
 import ChangePassword from './components/changepassword/ChangePassword';
-import PhoneVerify from "./components/phoneverify/PhoneVerify"; // ← добавлено
+import ResetPassword from './components/resetpassword/ResetPassword';
+import Chat from './components/chat/Chat';
+import Addresses from './components/pages/Addresses';
 
 function App() {
   // const [blocked, setBlocked] = useState(false);
@@ -89,10 +91,12 @@ function App() {
             <Route path='/' element={<Main />} />
             <Route path="/" element={<Dashboard />} />
             <Route path="/" element={<Logout />} />
+            <Route path="/addresses" element={<Addresses />} />
+            <Route path="/" element={<Chat />} />
+            <Route path="/resetpassword" element={<ResetPassword />} />
             <Route path="/change-password" element={<ChangePassword />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/verify-phone" element={<PhoneVerify />} />
             <Route
               path="/profile"
               element={

@@ -18,7 +18,7 @@ export const ThemeProvider = ({ children }) => {
     // 2. Получить актуальную тему с Django
     const fetchTheme = async () => {
       try {
-        const res = await axios.get("/api/theme/", {
+        const res = await axios.get("http://127.0.0.1:8000/api/darkplan/api/theme/", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access")}`,
           },

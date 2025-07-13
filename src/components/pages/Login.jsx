@@ -58,7 +58,7 @@ export default function LoginPage() {
         type="submit" class="btn-default" style={{ background: 'green' }}
       >Войти</button>
       <br /><br /><br />
-      <a href="/change-password" style={{ color: 'var(--text-color)' }}>Забыли пароль</a>
+      <a href="/change-password" style={{ color: 'var(--text-color)' }}>Забыли пароль ?</a>
       <br /><br /><br />
     </form>
   );

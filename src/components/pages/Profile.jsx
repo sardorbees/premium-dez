@@ -10,6 +10,7 @@ import '../assents/css/mousecursor.css'
 import '../assents/css/slicknav.min.css'
 import '../assents/css/swiper-bundle.min.css'
 import logo from '../assents/img/telegram-svgrepo-com.svg'
+import Addresses from "./Addresses";
 
 export default function Profile() {
   const [profile, setProfile] = useState(null);
@@ -115,7 +116,7 @@ export default function Profile() {
                     placeholder="Телефон"
                     value={form.phone_number || ""}
                     onChange={handleChange}
-                    style={{ border: '1px solid black' }} class="w-full px-4 py-2 rounded border bg-white text-black border-gray-300 placeholder-gray-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 transition-colors duration-200" required
+                    style={{ border: '1px solid black', }} class="w-full px-4 py-2 rounded border bg-white text-black border-gray-300 placeholder-gray-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 transition-colors duration-200" required
                   />
                 </div>
               </div>
@@ -127,14 +128,15 @@ export default function Profile() {
                     <img
                       src={profile.image}
                       alt="avatar"
-                      width={120}
+                      width={150}
+                      height={150}
                       class="rounded-circle"
                       style={{ borderRadius: "50%" }}
                     />
                   )}
                 </div>
-                <div class="col-sm-9 text-secondary">
-                  <input name="image" type="file" onChange={handleChange} style={{ border: '1px solid black' }} class="w-full px-4 py-2 rounded border bg-white text-black border-gray-300 placeholder-gray-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 transition-colors duration-200"/>
+                <div class="col-sm-9 text-secondary" style={{ marginTop: '55px' }}>
+                  <input name="image" type="file" onChange={handleChange} style={{ border: '1px solid black' }} class="w-full px-4 py-2 rounded border bg-white text-black border-gray-300 placeholder-gray-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 transition-colors duration-200" />
                 </div>
               </div>
               <hr />
@@ -158,7 +160,7 @@ export default function Profile() {
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/" style={{ color: 'var(--text-color)' }}>Основный</a></li>
                 <li class="breadcrumb-item"><a style={{ color: 'var(--text-color)' }}>Вашь Профиль</a></li>
-                <li class="breadcrumb-item active" aria-current="page" style={{color: 'var(--text-color)'}}>{profile.first_name}</li>
+                <li class="breadcrumb-item active" aria-current="page" style={{ color: 'var(--text-color)' }}>{profile.first_name}</li>
               </ol>
             </nav>
             <div class="row gutters-sm">
@@ -170,7 +172,8 @@ export default function Profile() {
                         <img
                           src={profile.image}
                           alt="avatar"
-                          width={120}
+                          width={150}
+                          height={130}
                           class="rounded-circle"
                           style={{ borderRadius: "50%" }}
                         />
@@ -199,7 +202,7 @@ export default function Profile() {
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                       <h6 class="mb-0"><img src={logo} alt="" width={30} />Телеграмм</h6>
-                      <a href="https://Premium_dez" class="text-secondary">Телеграмм</a>
+                      <a href="https://t.me/Premium_dizenfeksiya" class="text-secondary">Телеграмм</a>
                     </li>
                   </ul>
                 </div>
@@ -237,6 +240,10 @@ export default function Profile() {
                     </div>
                     <hr />
                     <div class="row">
+                      <Addresses />
+                    </div>
+                    <hr />
+                    <div class="row">
                       <div class="col-sm-12">
                         <button onClick={() => setEditing(true)} class="btn-default">✏️ Изменить профиль</button>
                       </div>
@@ -252,4 +259,3 @@ export default function Profile() {
     </div>
   );
 }
-// */style="height: 5px"*/

@@ -25,7 +25,7 @@ function Header() {
     useEffect(() => {
         const token = localStorage.getItem('access')
         if (token) {
-            axios.get('/api/accounts/profile/', {
+            axios.get('http://127.0.0.1:8000/api/accounts/profile/', {
                 headers: { Authorization: `Bearer ${token}` }
             }).then(res => {
                 setUser(res.data)
@@ -106,9 +106,9 @@ function Header() {
                                     <ul class="navbar-nav mr-auto" id="menu">
                                         <li class="nav-item"><a class="nav-link" href="./">Основный</a></li>
                                         {categories.map(cat => (
-                                            <li className="nav-item" key={cat.id}>
+                                            <span className="nav-item" key={cat.id}>
                                                 <a className="nav-link" href={cat.slug}>{cat.category_name}</a>
-                                            </li>
+                                            </span>
                                         ))}
                                         <li class="nav-item submenu"><a class="nav-link" href="#">Страницы</a>
                                             <ul>

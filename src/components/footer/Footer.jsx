@@ -112,7 +112,7 @@ function Footer() {
                                 </div>
 
                                 <div class="footer-copyright-text">
-                                    <a href="https://t.me/basitdesigns" style={{ color: 'white' }}>Веб-сайт создан Krafto-Agency</a>
+                                    <a href="https://t.me/ali_candaan" style={{ color: 'white' }}>Веб-сайт создан Ali-Company</a>
                                 </div>
                             </div>
                         </div>
