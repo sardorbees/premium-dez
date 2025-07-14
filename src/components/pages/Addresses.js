@@ -23,7 +23,7 @@ const Addresses = () => {
     }, []);
 
     const fetchAddresses = () => {
-        axios.get('http://127.0.0.1:8000/api/adresslc/addresses/')
+        axios.get('https://backend-dedd.onrender.com/api/adresslc/addresses/')
             .then(res => {
                 setAddresses(res.data);
                 if (res.data.length > 0) {
@@ -59,7 +59,7 @@ const Addresses = () => {
         setError(null);
         if (currentAddress) {
             // Обновляем адрес
-            axios.put(`http://127.0.0.1:8000/api/adresslc/addresses/${currentAddress.id}/`, form)
+            axios.put(`https://backend-dedd.onrender.com/api/adresslc/addresses/${currentAddress.id}/`, form)
                 .then(res => {
                     fetchAddresses();
                     setCurrentAddress(res.data);
@@ -68,7 +68,7 @@ const Addresses = () => {
                 .catch(() => setError('Ошибка при обновлении адреса'));
         } else {
             // Создаем новый адрес
-            axios.post('http://127.0.0.1:8000/api/adresslc/addresses/', form)
+            axios.post('https://backend-dedd.onrender.com/api/adresslc/addresses/', form)
                 .then(res => {
                     fetchAddresses();
                     setCurrentAddress(res.data);
@@ -85,7 +85,7 @@ const Addresses = () => {
     };
 
     const handleDelete = (id) => {
-        axios.delete(`http://127.0.0.1:8000/api/adresslc/addresses/${id}/`)
+        axios.delete(`https://backend-dedd.onrender.com/api/adresslc/addresses/${id}/`)
             .then(() => {
                 fetchAddresses();
                 if (currentAddress?.id === id) {
