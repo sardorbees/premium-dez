@@ -26,7 +26,7 @@ export default function AllOrdersList() {
     }, []);
 
     const fetchOrders = () => {
-        axios.get('http://127.0.0.1:8000/api/order/api/orders/')
+        axios.get('https://backend-dedd.onrender.com/api/order/api/orders/')
             .then(res => {
                 setOrders(res.data);
             })

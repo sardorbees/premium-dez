@@ -18,7 +18,7 @@ export default function OrderForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://127.0.0.1:8000/api/order/api/orders/', form)
+        axios.post('https://backend-dedd.onrender.com/api/order/api/orders/', form)
             .then(() => {
                 setForm({ name: '', phone: '', address: '' });
                 setSubmitted(true);
