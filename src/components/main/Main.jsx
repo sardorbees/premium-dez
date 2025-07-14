@@ -17,12 +17,10 @@ import OurPricing from '../our-pricing/OurPricing'
 import OurProject from '../our-project/OurProject'
 import OurTestimonials from '../our-testimonials/OurTestimonials'
 import WhyChooseUs from '../why-choose-us/WhyChooseUs'
-import Chat from '../chat/Chat';
 function Main() {
     return (
         <div>
             <HeroDark />
-            <Chat />
             <BestServices />
             <AboutUs />
             <OurServices />

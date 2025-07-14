@@ -161,6 +161,8 @@ export default function Profile() {
                 <li class="breadcrumb-item"><a href="/" style={{ color: 'var(--text-color)' }}>Основный</a></li>
                 <li class="breadcrumb-item"><a style={{ color: 'var(--text-color)' }}>Вашь Профиль</a></li>
                 <li class="breadcrumb-item active" aria-current="page" style={{ color: 'var(--text-color)' }}>{profile.first_name}</li>
+                <li class="breadcrumb-item active" aria-current="page" style={{ color: 'var(--text-color)' }}><a href="/orderform" style={{ color: 'var(--text-color)' }}>Для заказов</a></li>
+                <li class="breadcrumb-item active" aria-current="page" style={{ color: 'var(--text-color)' }}><a href="/allorderslist" style={{ color: 'var(--text-color)' }}>Все Заказы</a></li>
               </ol>
             </nav>
             <div class="row gutters-sm">
@@ -172,7 +174,7 @@ export default function Profile() {
                         <img
                           src={profile.image}
                           alt="avatar"
-                          width={150}
+                          width={130}
                           height={130}
                           class="rounded-circle"
                           style={{ borderRadius: "50%" }}
@@ -208,6 +210,10 @@ export default function Profile() {
                 </div>
                 <br /><br />
                 <button onClick={handleLogout} class="btn-default">🚪 Выйти из аккаунта</button>
+                <br /><br /><br />
+                <button onClick={() => navigate("/change-password")} class="btn-default">🔑 Сменить пароль</button>
+                <br /><br /><br />
+                <button onClick={() => setEditing(true)} class="btn-default">✏️ Изменить профиль</button>
               </div>
               <div class="col-md-8">
                 <div class="card mb-3">
@@ -242,15 +248,8 @@ export default function Profile() {
                     <div class="row">
                       <Addresses />
                     </div>
-                    <hr />
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <button onClick={() => setEditing(true)} class="btn-default">✏️ Изменить профиль</button>
-                      </div>
-                    </div>
                   </div>
                 </div>
-                <button onClick={() => navigate("/change-password")} class="btn-default">🔑 Сменить пароль</button>
               </div>
             </div>
           </div>

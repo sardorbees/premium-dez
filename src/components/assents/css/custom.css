@@ -6392,3 +6392,86 @@ header.main-header .header-sticky.active {
     display: flex;
     column-gap: 15px;
 }
+
+.sss {
+    margin-top: 15px;
+    display: flex;
+    column-gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+@media only screen and (min-width: 1000px) and (max-width: 1100px) {
+    .nauyu {
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1000px) {
+    .nauyu {
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (min-width: 816px) and (max-width: 900px) {
+    .nauyu {
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 816px) {
+    .nauyu {
+        margin-top: 19px;
+    }
+
+    .saw {
+        margin-top: 15px;
+        position: relative;
+        top: -15px;
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 700px) {
+    .nauyu {
+        margin-top: 19px;
+    }
+
+    .saw {
+        margin-top: 15px;
+        position: relative;
+        top: -15px;
+    }
+}
+@media only screen and (min-width: 500px) and (max-width: 600px) {
+    .nauyu {
+        margin-top: 19px;
+    }
+
+    .saw {
+        margin-top: 15px;
+        position: relative;
+        top: -15px;
+    }
+}
+@media only screen and (min-width: 400px) and (max-width: 500px) {
+    .nauyu {
+        margin-top: 19px;
+    }
+
+    .saw {
+        margin-top: 15px;
+        position: relative;
+        top: -15px;
+    }
+}
+@media only screen and (min-width: 342px) and (max-width: 400px) {
+    .nauyu {
+        margin-top: 19px;
+    }
+
+    .saw {
+        margin-top: 15px;
+        position: relative;
+        top: -15px;
+    }
+}
