@@ -1,7 +1,7 @@
 // components/AllOrdersList.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../assents/css/order.css';
+import '../assents/css/order2.css';
 
 const statusLabels = {
     accepted: 'Ваш заказ принят',
@@ -36,30 +36,34 @@ export default function AllOrdersList() {
     };
 
     return (
-        <div className="orders-container">
+        <div className="dsi">
             <h2>Наши общие заказы</h2>
             <a href="/profile"><h2 style={{ color: 'green', paddingTop: '15px' }}>Перейти на профиль</h2></a>
-            <br />
-            {orders.length === 0 ? (
-                <p>Заказов пока нет</p>
-            ) : (
-                <ul className="orders-list">
-                    {orders.map((order) => (
-                        <li key={order.id} className="order-item">
-                            <div
-                                className="status-block"
-                                style={{ backgroundColor: statusColors[order.status] }}
-                            >
-                                {statusLabels[order.status]}
-                            </div>
-                            <p><strong>Имя:</strong> {order.name}</p>
-                            <p><strong>Телефон:</strong> {order.phone}</p>
-                            <p><strong>Адрес:</strong> {order.address}</p>
-                            <p><strong>Создан:</strong> {new Date(order.created_at).toLocaleString()}</p>
-                        </li>
-                    ))}
-                </ul>
-            )}
+            <div className="orders-containere">
+                <br />
+                {orders.length === 0 ? (
+                    <p>Заказов пока нет</p>
+                ) : (
+                    <div className='ulll'>
+                        <ul className="orders-list">
+                            {orders.map((order) => (
+                                <li key={order.id} className="order-item">
+                                    <div
+                                        className="status-block"
+                                        style={{ backgroundColor: statusColors[order.status] }}
+                                    >
+                                        {statusLabels[order.status]}
+                                    </div>
+                                    <p><strong>Имя:</strong> {order.name}</p>
+                                    <p><strong>Телефон:</strong> {order.phone}</p>
+                                    <p><strong>Адрес:</strong> {order.address}</p>
+                                    <p><strong>Создан:</strong> {new Date(order.created_at).toLocaleString()}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }

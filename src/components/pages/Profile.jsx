@@ -10,7 +10,6 @@ import '../assents/css/mousecursor.css'
 import '../assents/css/slicknav.min.css'
 import '../assents/css/swiper-bundle.min.css'
 import logo from '../assents/img/telegram-svgrepo-com.svg'
-import Addresses from "./Addresses";
 
 export default function Profile() {
   const [profile, setProfile] = useState(null);
@@ -210,10 +209,6 @@ export default function Profile() {
                 </div>
                 <br /><br />
                 <button onClick={handleLogout} class="btn-default">🚪 Выйти из аккаунта</button>
-                <br /><br /><br />
-                <button onClick={() => navigate("/change-password")} class="btn-default">🔑 Сменить пароль</button>
-                <br /><br /><br />
-                <button onClick={() => setEditing(true)} class="btn-default">✏️ Изменить профиль</button>
               </div>
               <div class="col-md-8">
                 <div class="card mb-3">
@@ -245,9 +240,9 @@ export default function Profile() {
                       </div>
                     </div>
                     <hr />
-                    <div class="row">
-                      <Addresses />
-                    </div>
+                    <button onClick={() => navigate("/change-password")} class="btn-default">🔑 Сменить пароль</button>
+                    <br /><br /><br />
+                    <button onClick={() => setEditing(true)} class="btn-default">✏️ Изменить профиль</button>
                   </div>
                 </div>
               </div>

@@ -40,7 +40,6 @@ import Navbar from './components/navbar/Navbar';
 import PrivateRoute from "./components/privateroute/PrivateRoute";
 import ChangePassword from './components/changepassword/ChangePassword';
 import ResetPassword from './components/resetpassword/ResetPassword';
-import Addresses from './components/pages/Addresses';
 import OrderForm from './components/orderform/OrderForm';
 import AllOrdersList from './components/allorderslist/AllOrdersList';
 
@@ -94,7 +93,6 @@ function App() {
             <Route path="/" element={<Logout />} />
             <Route path="/allorderslist" element={<AllOrdersList />} />
             <Route path="/orderform" element={<OrderForm />} />
-            <Route path="/addresses" element={<Addresses />} />
             <Route path="/resetpassword" element={<ResetPassword />} />
             <Route path="/change-password" element={<ChangePassword />} />
             <Route path="/register" element={<Register />} />
