@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="./1_CAT3JEY.png" />
+  <link rel="icon" href="./123.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="csrf-token" content="{{ csrf_token }}">
   <meta name="theme-color" content="#000000" />
@@ -196,7 +196,7 @@
       .catch(err => console.error("Недоступно:", err));
   </script>
   <script>
-    fetch('http://127.0.0.1:8000/api/accounts/login/', {
+    fetch('https://backend-dedd.onrender.com/api/accounts/login/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

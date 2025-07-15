@@ -60,7 +60,7 @@ function ContactForm() {
         if (isBlocked) return;
 
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/applicationapplicationapplications/', formData);
+            const response = await axios.post('https://backend-dedd.onrender.com/api/applicationapplicationapplications/', formData);
             if (response.status === 201) {
                 setSuccess(true);
                 setFormData({ full_name: '', phone: '', address: '', description: '' });
@@ -89,7 +89,7 @@ function ContactForm() {
 
     const handleUnlock = async () => {
         try {
-            await axios.get('http://127.0.0.1:8000/api/applicationunlock-ip/');
+            await axios.get('https://backend-dedd.onrender.com/api/applicationunlock-ip/');
             localStorage.removeItem('block_until');
             setIsBlocked(false);
             setTimeLeft('');
